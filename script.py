@@ -10,7 +10,7 @@ def plot():
     from bokeh.embed import components
     from bokeh.resources import CDN
 
-    start=datetime.datetime(2015,11,1)
+    start=datetime.datetime(2015,12,1)
     end=datetime.datetime(2016,3,10)
 
     df=data.DataReader(name="GOOG",data_source="yahoo",start=start,end=end)
