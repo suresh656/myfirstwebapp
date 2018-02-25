@@ -13,7 +13,7 @@ def plot():
     start=datetime.datetime(2016,10,1)
     end=datetime.datetime(2017,3,10)
 
-    df=data.DataReader(name="GOOG",data_source="yahoo",start=start,end=end)
+    df=data.DataReader(name="GOOG",data_source="google",start=start,end=end)
 
     df_bull=df[df.Close>=df.Open]
     df_bear=df[df.Open>df.Close]
@@ -43,6 +43,10 @@ def home():
 @app.route('/about/')
 def about():
     return render_template("about.html")
+
+@app.route('/policy/')
+def policy():
+    return render_template("policy.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
