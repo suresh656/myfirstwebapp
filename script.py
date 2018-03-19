@@ -20,7 +20,7 @@ def plot():
 
     p=figure(x_axis_type='datetime', height=300, width=1000,title='Candlestick Chart',sizing_mode='scale_width')
     #p.grid.grid_line_alpha=0.5
-
+#hi
     hours_12=12*60*60*1000
 
     p.segment(df.index, df.High, df.index, df.Low, color='black')
