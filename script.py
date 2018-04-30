@@ -1,7 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+#from werkzeug.wrappers import Request, Response
 
 app =Flask(__name__)
 
+#@Request.application
+#def application(request):
+#    return Response('Hello World!')
+#
+#
 @app.route('/plot/')
 def plot():
     from pandas_datareader import data
@@ -40,6 +46,11 @@ def plot():
 def home():
     return render_template("home.html")
 
+@app.route('/ome/',methods=["GET"])
+def ome():
+    resp = {"username": "kkk"}
+    return jsonify(resp)
+
 @app.route('/about/')
 def about():
     return render_template("about.html")
@@ -50,3 +61,5 @@ def policy():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    #from werkzeug.serving import run_simple
+    #run_simple('localhost', 4000, application)
