@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 #from werkzeug.wrappers import Request, Response
 
 app =Flask(__name__)
@@ -46,10 +46,19 @@ def plot():
 def home():
     return render_template("home.html")
 
-@app.route('/ome/',methods=["GET"])
-def ome():
+@app.route('/get/',methods=["GET"])
+def geti():
     resp = {"username": "kkk"}
     return jsonify(resp)
+
+@app.route('/ost/',methods=["POST"])
+def posti():
+    responseId = request.json["responseId"]
+    #session = request.json["session"]
+    #querytext = request.json["querytext"]
+    #mobilenumber = request.json["mobilenumber"]
+    respo = {"fulfillmentText": "This is the response","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+    return jsonify(respo)
 
 @app.route('/about/')
 def about():
