@@ -57,7 +57,7 @@ def posti():
     #session = request.json["session"]
     #querytext = request.json["querytext"]
     #mobilenumber = request.json["mobilenumber"]
-    respo = {"fulfillmentText": "This is the response","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "remobile"}}
+    respo = {"fulfillmentText": "This is the response","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "reotp"}}
     return jsonify(respo)
 
 @app.route('/about/')
